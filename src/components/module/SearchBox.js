@@ -24,7 +24,7 @@ function SearchBox({ firstWidth }) {
     }
     if (selectedOption && inputValue) {
       if (!myRegEx.test(inputValue)) {
-        showToast("لطفا فیلتر را اعمال کنید", "error");
+        showToast("از کاراکتر های خاص استفاده نکنید", "error");
         return;
       }
     }
