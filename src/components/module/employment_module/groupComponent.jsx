@@ -22,7 +22,7 @@ import groupData from "./groupData";
 function GroupComponent() {
   const jobTeam = groupData;
   return (
-    <div>
+    <div style={{ marginTop: 100 }}>
       <h1 style={{ marginBottom: "2rem" }}>اعضای تیم جذب و استخدام</h1>
       <div>
         <Grid container spacing={2}>
