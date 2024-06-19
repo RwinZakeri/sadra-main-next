@@ -89,15 +89,28 @@ const Footer = () => {
       <div className="detail_container">
         <div className="More_Detail">
           <div className="detail_right" dir="ltr">
-            <div>
-              <h1>صدرا</h1>
-              <Image
-                width={500}
-                height={50}
-                alt="fuck"
-                className="logo"
-                src={loadSadra}
-              />
+            <div
+              dir="rtl"
+              style={{
+                width: "100%",
+              }}
+            >
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "right",
+                  width: "100%",
+                }}
+              >
+                <h1>صدرا</h1>
+                <Image
+                  width={500}
+                  height={50}
+                  alt="fuck"
+                  className="logo"
+                  src={loadSadra}
+                />
+              </div>
             </div>
             <p dir="rtl">
               صدرا یک پلتفرم یادگیری آنلاین ملی است که به هر کسی و در هر کجا

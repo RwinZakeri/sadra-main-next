@@ -1090,6 +1090,7 @@
 }
 
 .comment_card_container3 {
+  direction: rtl;
   text-align: right;
   max-width: 1900px;
   justify-content: center;
