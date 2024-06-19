@@ -25,7 +25,7 @@ const EventCard = ({
   author,
 }) => {
   // const newImage = image?.split('/').splice(1).splice(1).join('/');
-  const splitedTime = time.split("");
+  // const splitedTime = time.split("");
 
   return (
     <div className="CardEvent">
@@ -131,7 +131,7 @@ const EventCard = ({
             <IconButton aria-label="time">
               <BiTime />
             </IconButton>
-            <Typography
+            {/* <Typography
               fontFamily={"Yekan, sans-serif"}
               sx={{ fontSize: 15 }}
               variant="h1"
@@ -141,7 +141,7 @@ const EventCard = ({
               {splitedTime[1] ? splitedTime[1] : "0"}:
               {splitedTime[2] ? splitedTime[2] : "0"}
               {splitedTime[3] ? splitedTime[3] : "0"}
-            </Typography>
+            </Typography> */}
           </CardActions>
         </div>
       </Card>

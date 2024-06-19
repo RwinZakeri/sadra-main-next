@@ -7,6 +7,7 @@ import { FaSearch } from "react-icons/fa";
 import { toast, ToastContainer } from "react-toastify";
 import { showToast } from "./AuthModules/Toastify";
 
+const myRegEx = /[a-zA-Z\u0600-\u06FF\uFB8A\u067E\u0686\u06AF\u0698]+/;
 function SearchBox({ firstWidth }) {
   // Router
   const router = useRouter();
@@ -16,7 +17,13 @@ function SearchBox({ firstWidth }) {
   // Functions
   const clickHandler = () => {
     if (!selectedOption) {
-      if (!inputValue) {
+      if (!inputValue || !myRegEx.test(inputValue)) {
+        showToast("لطفا فیلتر را اعمال کنید", "error");
+        return;
+      }
+    }
+    if (selectedOption && inputValue) {
+      if (!myRegEx.test(inputValue)) {
         showToast("لطفا فیلتر را اعمال کنید", "error");
         return;
       }
