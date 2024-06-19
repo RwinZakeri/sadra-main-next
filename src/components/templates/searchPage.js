@@ -2,6 +2,8 @@
 import axios from "axios";
 import Link from "next/link";
 import React, { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function SearchPage({ filters }) {
   const myArray = ["classes", "events", "blog"];
@@ -43,13 +45,7 @@ function SearchPage({ filters }) {
   return (
     <div>
       {!filters.option && !filters.value ? (
-        data?.map((item, index) =>
-          item.map((item) => (
-            <Link key={item._id} href={`/${filters.option}/${item._id}`}>
-              <h1>{item.title}</h1>
-            </Link>
-          ))
-        )
+        toast.error("error")
       ) : filters.option && !filters.value.length ? (
         data?.map((item) => (
           <Link key={item._id} href={`/${filters.option}/${item._id}`}>

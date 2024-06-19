@@ -4,6 +4,8 @@ import { useRouter } from "next/navigation";
 // import "./SearchBox.css";
 // Icons
 import { FaSearch } from "react-icons/fa";
+import { toast, ToastContainer } from "react-toastify";
+import { showToast } from "./AuthModules/Toastify";
 
 function SearchBox({ firstWidth }) {
   // Router
@@ -13,6 +15,12 @@ function SearchBox({ firstWidth }) {
   const [inputValue, setInputValue] = useState("");
   // Functions
   const clickHandler = () => {
+    if (!selectedOption) {
+      if (!inputValue) {
+        showToast("لطفا فیلتر را اعمال کنید", "error");
+        return;
+      }
+    }
     router.push(`/search?option=${selectedOption}&value=${inputValue}`);
   };
 
@@ -49,6 +57,18 @@ function SearchBox({ firstWidth }) {
       <button className="search_Btn" onClick={clickHandler}>
         <FaSearch className="search-icon" />
       </button>
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop
+        closeOnClick
+        rtl
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
     </div>
   );
 }
