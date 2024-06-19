@@ -1,0 +1,72 @@
+"use client"
+import React from 'react'
+import { useEffect , useState , useRef } from 'react';
+import { useRouter } from 'next/router';
+// MUi 
+import { Paper, Typography } from '@mui/material';
+// Icons
+import { IoPlayOutline } from 'react-icons/io5';
+
+function VideoComponent({ UrlAutorName, videoSrc, videoTitle, videoJob, videoThumbnail }) {
+  const router = useRouter();
+  const video = videoSrc?.split("/").splice(1).splice(1).join("/");
+  const newThumbnail = videoThumbnail?.split("/").splice(1).splice(1).join("/");
+  const videoRef = useRef();
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const handleVideoClick = () => {
+      if (videoRef.current.paused) {
+          videoRef.current.play();
+          setIsPlaying(true);
+      } else {
+          videoRef.current.pause();
+          setIsPlaying(false);
+      }
+  };
+
+  const handleVideoEnded = () => {
+      setIsPlaying(false);
+  };
+
+
+  function clickHandlerUrl({ name }) {
+      router.push(`/student/${name}`)
+  }
+
+  return (
+      <div style={{ position: 'relative' }} className='successVideoContainer'>
+      <Paper elevation={0} onClick={handleVideoClick}>
+          <video
+              className='successVideo'
+              ref={videoRef}
+              width='100%'
+              poster={newThumbnail ? newThumbnail : ''}
+              controls={isPlaying}
+              onEnded={handleVideoEnded}
+          >
+              <source src={video} type='video/mp4' />
+              Your browser does not support the video tag.
+          </video>
+          <div
+              className='successBoxShadow'
+              style={{ display: isPlaying ? 'none' : 'block' }}
+          ></div>
+          <div className='successVideoInformation' style={{ display: isPlaying ? 'none' : 'flex' }}>
+              <div className='responsiveVideoTexts' onClick={() => clickHandlerUrl({name: UrlAutorName})}>
+                  <Typography fontFamily={'Yekan,sans-serif'} variant='h6'>
+                      {videoTitle}
+                  </Typography>
+                  <Typography fontFamily={'Yekan,sans-serif'} variant='subtitle1'>
+                      {videoJob}
+                  </Typography>
+              </div>
+              <div>
+                  <IoPlayOutline size={50} />
+              </div>
+          </div>
+      </Paper>
+      </div>
+  );
+}
+
+export default VideoComponent;

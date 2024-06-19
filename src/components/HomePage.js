@@ -1,0 +1,348 @@
+import Image from "next/image";
+import Link from "next/link";
+// Components
+import SearchBox from "../module/SearchBox";
+import Line from "../module/Line";
+import VideoPlayer from "../module/VideoPlayer";
+import CommentCard from "../module/home_module/CommentCard";
+import CardPopular from "../module/home_module/CardPopular";
+import EventCard from "../module/event_module/EventCard";
+import Loading from "@/helper/Loading";
+// MUI
+import Box from "@mui/material/Box";
+import Tab from "@mui/material/Tab";
+import TabContext from "@mui/lab/TabContext";
+import TabList from "@mui/lab/TabList";
+import TabPanel from "@mui/lab/TabPanel";
+import { Button } from "@mui/material";
+// Icons
+import { Tapci, Mokhaberat } from "@/svg/workingCorporate";
+import { TiMessages } from "react-icons/ti";
+import { CiCalendar } from "react-icons/ci";
+import { FaLongArrowAltLeft } from "react-icons/fa";
+// Imported Pic
+import imageAbout from "@/pic/image_about_us.png";
+import manLaptop from "../../../public/assets/pics/manLaptop.png";
+import LogoSvg from "../../../public/assets/logos/آب و فاضلاب استان تهران  سفید.png";
+import LogoSvg2 from "../../../public/assets/logos/موج پردازان البرز سفید.png";
+import LogoSvg3 from "../../../public/assets/logos/بیمه میهن سفید.png";
+// my component
+// import SuccessStory from "../module/(home_module)/successStory.jsx"
+import SuccessStory from "../module/(home_module)/successStory.js";
+import PopCource from "../module/(home_module)/popCource.jsx";
+import CommentsComponent from "../module/(home_module)/comments.jsx";
+
+const Home = () => {
+  return (
+    <>
+      <div className="Home">
+        <div className="BoxData">
+          <h1>مؤسسه صدرا</h1>
+          <h2>استعدادیابی مهارت افزایی و معرفی به بازار کار</h2>
+          <p>
+            با شرکت در دوره‌های آموزشی صدرا، از صفر شروع کن و در مسیر یادگیری با
+            بهترین متد‌های آموزشی ما همراه شو، تا ما پلی باشیم برای ورود تضمینی
+            به بازار کار
+          </p>
+          <SearchBox firstWidth="80%" />
+        </div>
+        <div className="ImageBox"></div>
+      </div>
+
+      {/* <div className='Boxgraduate'>
+      <p>فارغ التحصیلان دوره‌های ما، در  بهترین شرکت‌های کشور مشغول به کارند</p>
+      <div className='BoxgraduateIcon'>
+        <img src="../../assets/logos/بانک مسکن سیاه.png" alt="a4" className='logoMainPage' />
+        <img src="../../assets/logos/بانک پارسیان سیاه.png" alt="a5" className='logoMainPage' />
+        <img src="../../assets/logos/بیمه ایران سیاه.png" alt="a6" className='logoMainPage' />
+      </div>
+    </div> */}
+
+      {/* Why US */}
+
+      <div dir="rtl" className="why_Container" id="maxWidth">
+        <div className="why_us">
+          <div className="why_us_Icons" id="maxWidth">
+            <Line />
+            <h2>چرا ما</h2>
+          </div>
+          <h1>شرکت در دوره‌ها مساوی با ورود قطعی به بازار کار</h1>
+          <p>
+            صدرا، از متدهایی استفاده می‌کنه که مسیر یادگیری برای شما هموارتر
+            می‌کنه و نیروی کاری تربیت می‌کنه که صدرا با افتخار به شرکت‌های موفق
+            معرفی می‌کنه و اشتغال به کار شما رو، بعد از دوره تضمین می‌کنه.
+          </p>
+          <div className="Box_Container">
+            <div className="data_Box1">
+              <h1 style={{ color: "#fff" }}>پشتیبانی بعد از اتمام دوره</h1>
+              <p style={{ color: "#fff" }}>
+                اگر در طول دوره‌ یا بعد از اتمام آن مشکل دارید، امکان گفت و گو و
+                رفع مشکل برای شما وجود دارد.
+              </p>
+              <CiCalendar className="Icon" />
+            </div>
+
+            <div className="data_Box2">
+              <h1 style={{ color: "#fff" }}>دوره‌های آفلاین</h1>
+              <p style={{ color: "#fff" }}>
+                اگر امکان شرکت در دوره‌های حضوری یا آنلاین را ندارید، امکان
+                استفاده از ویدیوهای ضبط شده برای شما دوره‌ها وجود دارد.
+              </p>
+              <TiMessages className="Icon" />
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* part Three Media vidoe */}
+      <div className="learn_container" dir="rtl" id="maxWidth">
+        <div className="learn_icon">
+          <Line />
+          <h2>آموزش ما</h2>
+        </div>
+
+        <h1>استفاده از متدهای جدید آموزشی</h1>
+        <p dir="rtl">
+          صدرا، از استانداردها و چارچوب‌های سفارشی جدید آموزشی استفاده می‌کنه
+          ترکیبی از ترکیبی از CSTA ،ISTE ،PBLو ADIF است که در حال حاضر در آمریکا
+          و کانادا در حال اجراست و باعث سهولت در یادگیری دانشجویان و دانش‌آموزان
+          شده و پیشرفت آن‌ها به وضوح، قابل رویت است.
+        </p>
+        <div className="Video_Container">
+          <VideoPlayer
+            video={"/assets/videoMain.mp4"}
+            poster={"/assets/pics/logosadra.png"}
+          />
+        </div>
+      </div>
+
+      <div className="Contact_slider" id="maxWidth">
+        <div className="success_container">
+          <Line />
+          <h2>داستان‌های موفقیت</h2>
+        </div>
+
+        <h1>بیش از 500 دانش‌آموخته از مسیر خود راضی بودند</h1>
+        {/* <div className="Slider">
+          <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
+            {commentData &&
+              commentData?.map((item) => (
+                <SwiperSlide key={item.id}>
+                  <p
+                    id="cardComment"
+                    style={{
+                      padding: "0rem 3rem",
+                      textAlign: "center",
+                      textJustify: "inter-word",
+                    }}
+                  >
+                    {item.comment}
+                  </p>
+                  <Image width={500} height={500} src={item.profile} alt="prof" />
+                  <p id="cardName">{item.name}</p>
+                  <p id="cardJob">{item.job}</p>
+                </SwiperSlide>
+              ))}
+          </Swiper>
+        </div>
+
+        <div className="contact_corporates">
+          <Image
+            width={500} 
+            height={500}
+            src={LogoSvg}
+            alt="a1"
+            className="logoMainPage"
+            style={{ height: "85px", width: "230px" }}
+          />
+          <Image
+            width={500} 
+            height={500}
+            src={LogoSvg2}
+            alt="a2"
+            className="logoMainPage"
+            style={{ height: "85px", width: "230px" }}
+          />
+          <Image
+            width={500} 
+            height={500}
+            src={LogoSvg3}
+            alt="a3"
+            className="logoMainPage"
+            style={{ height: "85px", width: "230px" }}
+          />
+        </div> */}
+        {/* ************ */}
+        <SuccessStory />
+        {/* ************ */}
+      </div>
+      {/* Part Five */}
+
+      <div className="popular_Tutorial" id="maxWidth" dir="rtl">
+        <div className="popIcons">
+          <Line />
+          <h2>دوره‌های محبوب</h2>
+        </div>
+
+        <div className="popTexts">
+          <div className="dataCon1">
+            <h2>بیش از 100 دوره‌ی فعال برای پیشرفت شما</h2>
+          </div>
+
+          <div className="dataCon2">
+            <h2>
+              ما طیف وسیعی از دسته‌ها را برای کمک به شما در انتخاب دوره‌هایی که
+              متناسب با تخصص شما هستند ارائه می‌کنیم. بیش از 100 دوره شما را از
+              پایه راهنمایی می کند.
+            </h2>
+          </div>
+        </div>
+
+        {/* dataEvent */}
+        {/* <Box
+          sx={{
+            minHeight: "602px",
+            width: "100%",
+            typography: "body1",
+            direction: "rtl",
+            mt: "6rem",
+          }}
+        >
+          <TabContext value={value}>
+            <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+              <TabList
+                variant="scrollable"
+                scrollButtons="auto"
+                aria-label="scrollable auto tabs example"
+                TabIndicatorProps={{ style: { backgroundColor: "#4CA773" } }}
+                onChange={handleChange}
+              >
+                {TabHeaders.map((item) => (
+                  <Tab
+                    key={item.id}
+                    sx={{ fontFamily: "Yekan,sans-serif" }}
+                    label={item.title}
+                    value={item.id.toString()}
+                  />
+                ))}
+              </TabList>
+            </Box>
+            {TabHeaders.map((Tab) => (
+              <TabPanel key={Tab.id} value={Tab.id.toString()}>
+                <div className="popCardEvent">
+                  {popularEvents
+                    ?.filter((item) => item.category === Tab.title)
+                    .slice(0, 3)
+                    .map(
+                      (item) =>
+                        item.isShown === 1 && (
+                          <CardPopular key={item.id} {...item} />
+                        )
+                    )}
+                </div>
+              </TabPanel>
+            ))}
+          </TabContext>
+        </Box> */}
+        <PopCource />
+      </div>
+      <div dir="rtl" className="mobile_reverse" id="maxWidth">
+        <div className="home_about_con">
+          <div className="about_image_con">
+            <div className="about_text">
+              <div className="about_icons">
+                <h1>درباره ما</h1>
+                <Line />
+              </div>
+              <h1 dir="rtl">افزایش رشد فردی و تقویت استعداد شما</h1>
+              <p dir="rtl">
+                با بیش از یک دهه فعالیت زیرا همیشه می خواهیم خدمات آموزشی ارائه
+                دهیم که در مدارس آموزش داده نمی شود.
+              </p>
+              {/* <Button variant="outlined" sx={{ width : 150 , height : 45 , color : "#4CA773" , borderColor : "#4CA773" , borderRadius : 15}} >بیشتر بدانیم</Button> */}
+            </div>
+            <div className="about_img_container">
+              <Image width={500} height={500} src={imageAbout} alt="man" />
+            </div>
+          </div>
+          <div className="about_data">
+            <div>
+              <h2>1100+</h2>
+              <p>دانش‌آموز در حال استفاده از این سامانه</p>
+            </div>
+            <div>
+              <h2>100+</h2>
+              <p>دوره موجود در دسته‌بندی‌های مختلف</p>
+            </div>
+            <div>
+              <h2>150+</h2>
+              <p>مربی مجرب که به شما آموزش می‌دهند</p>
+            </div>
+          </div>
+        </div>
+        {/* part Seven  */}
+        {/* <div className='event_container'>
+              <div className='event_icons'>
+                <button>
+                  <p>
+                    <FaLongArrowAltLeft style={{margin : 12}} />
+                    <Link to="/events" style={{fontFamily:"Yekan, sans-serif"}}>
+                      رویدادهای بیشتر
+                    </Link>
+                  </p>
+                </button>
+                <h2>رویدادهای آینده</h2>
+              </div>
+              <div className='event_card_data' dir='rtl'>
+                {
+                window.innerWidth >= 1920 ? dataEvent?.slice(0 , 4).map((item) => (
+                  item.isShown === 1 &&  <Link key={item.id} to={`/events/${item.id}`} ><EventCard key={item.id} {...item} /></Link>
+                  )) : window.innerWidth <= 1440 && dataEvent?.slice(0 , 3).map((item) => (
+                  item.isShown === 1 &&  <Link key={item.id} to={`/events/${item.id}`} ><EventCard key={item.id} {...item} /></Link>
+                  ))
+                }
+              </div>
+        </div> */}
+      </div>
+
+      {/* Part Eight */}
+
+      <div className="Comments_container">
+        <div className="Icons_comments">
+          <h2>نظرات شما</h2>
+          <Line />
+        </div>
+
+        <h1>نظرات همراهان قبلی صدرا</h1>
+
+        {/* <div className="test">
+          <div className="comment_card_container">
+            {CommentData?.slice(0, 3).map((item) => (
+              <CommentCard key={item.id} {...item} />
+            ))}
+            <div className="comment_card_container2">
+              {CommentData?.slice(0, 3).map((item) => (
+                <CommentCard key={item.id} {...item} />
+              ))}
+            </div>
+          </div>
+
+          <hr />
+
+          <div className="comment_card_container3">
+            {CommentData?.slice(4, 7).map((item) => (
+              <CommentCard key={item.id} {...item} />
+            ))}
+            <div className="comment_card_container4">
+              {CommentData?.slice(4, 7).map((item) => (
+                <CommentCard key={item.id} {...item} />
+              ))}
+            </div>
+          </div>
+        </div> */}
+        <CommentsComponent />
+      </div>
+    </>
+  );
+};
+
+export default Home;

@@ -1,0 +1,13 @@
+.authDiv{
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+  background-color: #F9FAFB;
+}
+.buttonsClass{
+  color: #4ca773;
+  background-color: #e5e8ec;
+  border-radius: 0.5rem;
+  padding: 6px 10px;
+}
+
