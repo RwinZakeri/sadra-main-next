@@ -19,17 +19,26 @@ import { BiUserPlus } from "react-icons/bi";
 const SideBar = ({ isOpen, setIsopen }) => {
   const [userId, setUserId] = useState(null);
   useEffect(() => {
-    axios
-      .get("http://localhost:3001/api/dashboard/whoami", {
-        withCredentials: true,
-        headers: {
-          "x-api-key": process.env.NEXT_PUBLIC_API_ACCESS_KEY,
-        },
-      })
-      .then((response) => {
-        const { id } = response.data;
+    const fetchAuth = async () => {
+      try {
+        const res = await fetch("http://localhost:3001/api/dashboard/whoami", {
+          credentials: "include",
+          headers: { "x-api-key": process.env.NEXT_PUBLIC_API_ACCESS_KEY },
+        });
+
+        if (!res.ok) {
+          throw new Error(`HTTP error! Status: ${res.status}`);
+        }
+
+        const response = await res.json();
+        const { id } = response;
         setUserId(id);
-      });
+      } catch (error) {
+        console.warn("Error fetching data:", error);
+      }
+    };
+
+    fetchAuth();
   }, []);
 
   return (

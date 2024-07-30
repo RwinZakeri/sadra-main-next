@@ -314,8 +314,6 @@ const AuthForm = ({ isRegister }) => {
             //     "x-api-key": process.env.API_ACCESS_KEY,
             //   },
             // });
-            console.log(process.env.API_ACCESS_KEY);
-            console.log("process.env.API_ACCESS_KEY");
             let response = axios.post("http://localhost:3001/api/auth/login", {
               usernameOrEmail: values.userEmail,
               password: values.password,

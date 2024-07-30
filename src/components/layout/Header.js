@@ -16,20 +16,31 @@ import SideBar from "./Drawer.js";
 const Header = () => {
   const router = useRouter();
   const pathname = usePathname();
-  const [userId, setUserId] = useState(null);
+  const [userId, setUserId] = useState("");
 
   useEffect(() => {
-    axios
-      .get("http://localhost:3001/api/dashboard/whoami", {
-        withCredentials: true,
-        headers: {
-          "x-api-key": process.env.NEXT_PUBLIC_API_ACCESS_KEY,
-        },
-      })
-      .then((response) => {
-        const { _id } = response.data;
-        setUserId(_id);
-      });
+    const fetchAuth = async () => {
+      try {
+        const res = await fetch("http://localhost:3001/api/dashboard/whoami", {
+          credentials: "include",
+          headers: { "x-api-key": process.env.NEXT_PUBLIC_API_ACCESS_KEY },
+        });
+
+        if (!res.ok) {
+          // Handle different HTTP status codes
+          throw new Error(`HTTP error! status: ${res.status}`);
+        }
+
+        const response = await res.json();
+        const { id } = response;
+        setUserId(id);
+      } catch (error) {
+        console.error("Fetch error: ", error);
+        // Handle the error silently without displaying anything to the user
+      }
+    };
+
+    fetchAuth();
   }, []);
 
   const clickHandler = () => {

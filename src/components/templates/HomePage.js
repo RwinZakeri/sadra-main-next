@@ -27,8 +27,7 @@ import SuccessStory from "../module/(home_module)/successStory.js";
 import PopCource from "../module/(home_module)/popCource.jsx";
 import CommentsComponent from "../module/(home_module)/comments.jsx";
 
-const Home = ({data}) => {
-
+const Home = ({ data }) => {
   return (
     <>
       <div className="Home">

@@ -48,7 +48,13 @@ const PopCourceTab = ({ popularEvents }) => {
               {TabHeaders.map((item) => (
                 <Tab
                   key={item.id}
-                  sx={{ fontFamily: "Yekan,sans-serif" }}
+                  sx={{
+                    fontFamily: "Yekan,sans-serif",
+                    color: "#409860",
+                    "&.Mui-selected": {
+                      color: "#409860",
+                    },
+                  }}
                   label={item.title}
                   value={item.id.toString()}
                 />

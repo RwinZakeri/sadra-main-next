@@ -15,7 +15,7 @@ const EventDataHydrationErr = dynamic(() =>
   import("../module/event_module/eventData", { ssr: false })
 );
 
-export default function EventsPage({data}) {
+export default function EventsPage({ data }) {
   const popularEvent = [
     {
       id: 1,
@@ -75,13 +75,6 @@ export default function EventsPage({data}) {
           دانش خود به دانشجویان می‌باشند.{" "}
         </p>
         <SearchBox dir="ltr" />
-        <span id="popStyle">
-          {" "}
-          {popularEvent.map((item, index) => (
-            <span key={index}>{`${item.title} , `}</span>
-          ))}{" "}
-          : محبوب‌ها
-        </span>
       </div>
 
       <div className="eventBody">

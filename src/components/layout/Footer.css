@@ -1,4 +1,4 @@
-.Footer{
+.Footer {
   max-width: 100%;
   background-color: var(--primary-black);
   border-radius: 24px 24px 0px 0px;
@@ -11,12 +11,12 @@
 
   margin: 0 auto;
 }
-.Footer_content{
+.Footer_content {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.Footer .Footer_text_1{
+.Footer .Footer_text_1 {
   display: inline-flex;
   width: 35%;
   color: var(--base-white);
@@ -27,7 +27,7 @@
   margin-bottom: 24px;
 }
 
-.Footer .Footer_text_2{
+.Footer .Footer_text_2 {
   display: inline-flex;
   color: var(--Gray-300);
   text-align: center;
@@ -53,58 +53,60 @@
   font-family: inherit;
 }
 
-.corporations{
+.corporations {
   display: flex;
   justify-content: center;
 }
 
-.corporations ul{
+.corporations ul {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
 }
-.corporations li{
+.corporations li {
   padding: 50px;
   margin: 5px;
   flex-wrap: wrap;
 }
 
-.detail_container{
+.detail_container {
   max-width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--base-white);
-  border-bottom: 1px solid var(--Neutral-70) ;
+  border-bottom: 1px solid var(--Neutral-70);
 }
 
-.More_Detail{
+.More_Detail {
   width: 80%;
   display: flex;
   justify-content: space-between;
 }
 
-
-
-.lists{
+.lists {
   display: flex;
-
+  width: 80%;
 }
 .lists div {
   margin: 2px 100px;
-  width: 12%;
   display: flex;
   justify-content: flex-end;
   text-align: right;
+  background-color: var(--primary-black);
+  color: #409860;
 }
 
-.lists li{
+.lists li a {
+  color: #fff;
+}
+
+.lists li {
   margin: 7%;
 }
 
-
-.More_Detail .detail_right{
+.More_Detail .detail_right {
   margin-right: 10%;
   display: flex;
   align-items: flex-end;
@@ -125,15 +127,7 @@
   color: var(--base-white);
 }
 
-.lists div{
-  display: flex;
-  width: 100%;
-  background-color: var(--primary-black);
-}
-
-
-
-.footer_end{
+.footer_end {
   width: 100%;
   display: flex;
   align-items: center;
@@ -145,89 +139,87 @@
   color: var(--base-white);
 }
 
-.end_container{
+.end_container {
   width: 70%;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.icons{
+.icons {
   font-size: 20px;
   color: var(--base-white);
-  margin: 2px 6px ;
+  margin: 2px 6px;
   cursor: pointer;
 }
 
-
-
-
-@media (max-width : 1060px) {
+@media (max-width: 1060px) {
   .lists div {
-      margin: 2px 50px;
-      width: 12%;
-      display: flex;
-      justify-content: flex-end;
-      text-align: right;
+    margin: 2px 50px;
+    width: 12%;
+    display: flex;
+    justify-content: flex-end;
+    text-align: right;
   }
-  .Footer .Footer_text_1{
-      font-size: 34px;
-      width: 80%;
+  .Footer .Footer_text_1 {
+    font-size: 34px;
+    width: 80%;
   }
 }
 
-@media (max-width : 740px) {
-  .More_Detail{
-      flex-direction: column-reverse;
-      align-items: center;
+@media (max-width: 740px) {
+  .More_Detail {
+    flex-direction: column-reverse;
+    align-items: center;
   }
 
-  .lists{
-      display: inline-flex;
-      align-content: center;
-      justify-content: center;
-      max-width: 10rem;
-  
+  .lists {
+    display: inline-flex;
+    align-content: center;
+    justify-content: center;
+    max-width: 10rem;
   }
-  .More_Detail .detail_right{
-      width: 80%;
-      align-items: center;
-      margin: 15px;
-      line-height: 30px;
-      margin-bottom: 60px;
-      font-size: 18px;
+  .More_Detail .detail_right {
+    width: 80%;
+    align-items: center;
+    margin: 15px;
+    line-height: 30px;
+    margin-bottom: 60px;
+    font-size: 18px;
   }
-  .Footer .Footer_text_1{
-      font-size: 20px;
-      font-style: normal;
-      font-weight: 500;
-      line-height: 28px; /* 140% */
-      line-height: 40px;
+  .Footer .Footer_text_1 {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 28px; /* 140% */
+    line-height: 40px;
   }
-  .Footer .Footer_text_2{
-      font-size: 14px;
+  .Footer .Footer_text_2 {
+    font-size: 14px;
   }
-  .start_Btn{
-      padding: 12px 10px;
+  .start_Btn {
+    padding: 12px 10px;
   }
-  .lists{
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      width: 90%;
+  .lists {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 90%;
   }
-  .lists div{
-      margin: 20px;
-      width: 80%;
+  .lists div {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
   }
-  .lists li{
-      margin: 12px;
+  .lists li {
+    margin: 12px;
   }
-  .icons{
-      font-size: 16px;
-      margin: 6px;
+  .icons {
+    font-size: 16px;
+    margin: 6px;
   }
-  .end_container p{
-      font-size: 8px;
+  .end_container p {
+    font-size: 8px;
   }
 }

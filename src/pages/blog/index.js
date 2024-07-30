@@ -27,13 +27,6 @@ export async function getServerSideProps() {
     },
   };
 }
-const res = await fetch("http://localhost:3001/api/blog/data", {
-  headers: {
-    "x-api-key": process.env.NEXT_PUBLIC_API_ACCESS_KEY,
-  },
-});
-const data = await res.json();
-console.log(data);
 
 // export async function getStaticPaths(){
 //   const res = await fetch("http://localhost:3001/api/blog/data")

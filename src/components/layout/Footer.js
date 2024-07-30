@@ -26,7 +26,11 @@ const Footer = () => {
     router.push("/auth/register");
   };
   return (
-    <div className="Footer" dir="rtl">
+    <div
+      className="Footer"
+      dir="rtl"
+      style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
+    >
       <div className="Footer_content">
         <h1 className="Footer_text_1">
           در دوره‌هایی که علاقه داری شرکت کن و رشد شغلی خودت رو ببین
@@ -102,14 +106,14 @@ const Footer = () => {
                   width: "100%",
                 }}
               >
-                <h1>صدرا</h1>
                 <Image
                   width={500}
                   height={50}
-                  alt="fuck"
+                  alt=""
                   className="logo"
                   src={loadSadra}
                 />
+                <h1>صدرا</h1>
               </div>
             </div>
             <p dir="rtl">
@@ -138,13 +142,19 @@ const Footer = () => {
                   <h2>شرکت</h2>
                 </li>
                 <li>
-                  <p>شرایط و قوانین</p>
+                  <Link href={"/"}>
+                    <p>شرایط و قوانین</p>
+                  </Link>
                 </li>
                 <li>
-                  <p>سیاست حفظ حریم خصوصی</p>
+                  <Link href={"/"}>
+                    <p>سیاست حفظ حریم خصوصی</p>
+                  </Link>
                 </li>
                 <li>
-                  <p>کوکی‌ها</p>
+                  <Link href={"/"}>
+                    <p>کوکی‌ها</p>
+                  </Link>
                 </li>
               </ul>
             </div>

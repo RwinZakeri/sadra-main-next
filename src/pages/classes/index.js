@@ -4,7 +4,6 @@ import { useRouter } from "next/router";
 function Classes({ data }) {
   const router = useRouter();
   const { query } = router;
-  console.log(data);
   return (
     <div>
       <ClassesPage data={data} category={query.category} />

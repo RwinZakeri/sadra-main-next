@@ -12,9 +12,7 @@ function SearchPage({ filters }) {
   const [data, setData] = useState([]);
 
   // if (RegEx.length) {
-  //   console.log(true);
   // }
-  // console.log(filters);
   let RegEx;
   if (filters.value) {
     RegEx = new RegExp(filters.value);

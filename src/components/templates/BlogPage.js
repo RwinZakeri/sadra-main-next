@@ -75,7 +75,7 @@ function BlogPage({ data, query }) {
         className="blogCardsContainer"
         style={{ marginTop: "5rem", marginBottom: "2rem" }}
       >
-        <Grid container sx={{ display: "flex" }} spacing={3}>
+        <Grid container sx={{ display: "flex" }}>
           {Object.keys(query).length
             ? data.data
                 .filter((item) => item.hashtags === query.tag)

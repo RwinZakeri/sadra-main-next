@@ -11,6 +11,9 @@
   max-height: 100vh;
   width: 60vw;
   padding: 12% 10% 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 /* .logoMainPage{
@@ -452,7 +455,7 @@
   }
   .Box_Container {
     flex-direction: column;
-    margin: 0px 15px 0px 47px;
+    padding: 0 15px;
   }
   .data_Box1,
   .data_Box2 {
@@ -460,7 +463,6 @@
     min-width: 100%;
     max-width: 100%;
     margin-bottom: 15px;
-    margin-right: 2.5%;
   }
   .data_Box1 h1,
   .data_Box2 h1 {
@@ -713,6 +715,9 @@
 
 .popular_Tutorial {
   max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .popIcons {
@@ -755,7 +760,7 @@
   }
 
   .popular_Tutorial {
-    padding: 2% 10%;
+    padding: 2%;
   }
 
   .popTexts {
@@ -1132,4 +1137,9 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  color: #409860;
 }

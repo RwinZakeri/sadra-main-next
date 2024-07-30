@@ -15,6 +15,7 @@ import { FaStar, FaCalendarAlt, FaLevelUpAlt } from "react-icons/fa";
 import { CiClock2 } from "react-icons/ci";
 import { GoStack } from "react-icons/go";
 import { MdOutlineStackedBarChart } from "react-icons/md";
+import { red } from "@mui/material/colors";
 
 // custome Hooks
 
@@ -38,17 +39,7 @@ const CardPopular = ({
     router.push(`/classes/${id}`);
   };
   return (
-    <Card
-      sx={{
-        maxWidth: 300,
-        minWidth: 300,
-        maxHeight: 412,
-        minHeight: 412,
-        borderRadius: 3.9,
-        cursor: "pointer",
-      }}
-      onClick={clickHandler}
-    >
+    <Card sx={{ minWidth:"300px" }} onClick={clickHandler}>
       <CardMedia
         sx={{ maxHeight: 170 }}
         component="img"
@@ -102,9 +93,7 @@ const CardPopular = ({
             variant="h6"
             component="div"
           >
-            <div>
-        
-            </div>
+            <div></div>
           </Typography>
         </div>
       </CardContent>
@@ -114,7 +103,7 @@ const CardPopular = ({
           <CiClock2 />{" "}
           <Typography fontFamily={"Yekan,sans-serif"} sx={{ fontSize: 14 }}>
             {" "}
-            {(time)} ساعت
+            {time} ساعت
           </Typography>
         </IconButton>
         <IconButton aria-label="lessons">
@@ -132,6 +121,7 @@ const CardPopular = ({
           </Typography>
         </IconButton>
       </CardActions>
+      <div></div>
     </Card>
   );
 };

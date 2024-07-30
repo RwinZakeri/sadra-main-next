@@ -76,17 +76,7 @@ function FilterList() {
     <>
       <div className="searchBoxContainer">
         <SearchBox />
-        <span id="popStyle">
-          {" "}
-          {popularEvent &&
-            popularEvent.map((item, index) => (
-              <span
-                style={{ color: "white" }}
-                key={index}
-              >{`${item.title} , `}</span>
-            ))}{" "}
-          <span style={{ color: "white" }}>: محبوب‌ها</span>
-        </span>
+       
       </div>
 
       <div className="Categories">
