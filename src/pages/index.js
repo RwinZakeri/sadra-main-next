@@ -6,9 +6,7 @@ function Home({ data }) {
     </>
   );
 }
-
 export default Home;
-
 export async function getStaticProps() {
   try {
     const res = await fetch("http://localhost:3001/api/classes/data", {
